@@ -6,7 +6,7 @@ end
 
 local list = require('telescope._extensions.highlight-tweaker').list
 
-return telescope.register_extenesion {
+return telescope.register_extension {
   exports = {
     list = list,
   }
