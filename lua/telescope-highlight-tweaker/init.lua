@@ -9,7 +9,7 @@ local action_set = require('telescope.actions.set')
 
 local M = {}
 
-local ns_id = vim.api.nvim_create_namespace('telescope-highlight-tweaker')
+local ns_id = vim.api.nvim_create_namespace('highlight-tweaker')
 vim.api.nvim_set_hl_ns(ns_id)
 
 local function get_hl(name)
