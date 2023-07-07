@@ -22,7 +22,7 @@ local function get_hl(name)
   return hl
 end
 
-
+-- TODO: Update the set_search_line action to highlight on search
 function M.list(opts)
   local prev_selection = nil
   local prev_hl_value = nil
