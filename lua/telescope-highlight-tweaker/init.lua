@@ -26,6 +26,8 @@ end
 function M.list(opts)
   local prev_selection = nil
   local prev_hl_value = nil
+  local cursor_line_bg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID('CursorLine')), 'bg#')
+
   opts = opts or {}
 
   local function handle_hl_reset(selection)
@@ -94,7 +96,7 @@ function M.list(opts)
 
         vim.api.nvim_cmd({
           cmd = "highlight",
-          args = { selection.value, "guibg=#4f4f4f" },
+          args = { selection.value, string.format("guibg=%s", cursor_line_bg) }
         }, {})
       end)
 
@@ -113,7 +115,7 @@ function M.list(opts)
 
         vim.api.nvim_cmd({
           cmd = "highlight",
-          args = { selection.value, "guibg=#4f4f4f" },
+          args = { selection.value, string.format("guibg=%s", cursor_line_bg) }
         }, {})
       end)
 
