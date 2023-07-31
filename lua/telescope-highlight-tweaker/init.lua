@@ -22,7 +22,7 @@ local function get_hl(name)
   return hl
 end
 
--- TODO: Update the set_search_line action to highlight on search
+-- TODO: Add highlights as you update prompt
 function M.list(opts)
   local prev_selection = nil
   local prev_hl_value = nil
@@ -130,7 +130,7 @@ function M.list(opts)
 
         actions.close(prompt_bufnr)
 
-        local hl_value = vim.fn.input("(" .. selection.value .. ") Set new highligh values: ")
+        local hl_value = vim.fn.input("(" .. selection.value .. ") Set new highlight values: ")
 
         vim.api.nvim_cmd({
           cmd = "highlight",
